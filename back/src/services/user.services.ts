@@ -25,7 +25,7 @@ export async function registerUser(
 
     if (error) {
       console.log(error)
-      return { error: error.details };
+      return { error: error };
 
     }
 

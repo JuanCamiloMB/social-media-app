@@ -1,0 +1,3 @@
+DBPASS = atCe6xBhXK8bbWng
+SUPABASEURL = https://krhblnvjvhlzkkomzuan.supabase.co
+SUPABASE_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtyaGJsbnZqdmhsemtrb216dWFuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjMxNzE5OTgsImV4cCI6MjAzODc0Nzk5OH0.seZclbbX34rl12zmXuy4i-cii3WxGugBYNBVMWVhASQ
