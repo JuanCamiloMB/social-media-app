@@ -25,7 +25,7 @@ export async function handleRegisterRoute(req: Request, res: Response) {
     !password ||
     !birth_date
   ) {
-    return res.status(400).json({ message: "Not enougth data" });
+    return res.status(400).json({ message: "Not enough data" });
   }
 
   const user = await registerUser(name, username, email, password, birth_date);
@@ -41,8 +41,5 @@ export async function handleRegisterRoute(req: Request, res: Response) {
     .status(200)
     .json({ ...user, token });
 
-  return res
-    .setHeader("Set-Cookie", `token=${username}`)
-    .status(200)
-    .json(user);
+
 }
