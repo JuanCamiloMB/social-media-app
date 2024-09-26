@@ -24,7 +24,7 @@ describe('handleRegisterRoute', () => {
 
     await handleRegisterRoute(req as any, res as any);
 
-    // expect(res.status).toHaveBeenCalledWith(400);
+
     expect(res.json).toHaveBeenCalledWith({ message: 'Not enough data' });
   });
 
