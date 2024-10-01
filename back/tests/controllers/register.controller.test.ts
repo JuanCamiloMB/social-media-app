@@ -1,5 +1,5 @@
-import { handleRegisterRoute } from './register.controller';
-import { registerUser } from '../services/user.services';
+import { handleRegisterRoute } from '../../src/controller/register.controller';
+import { registerUser } from '../../src/services/user.services';
 
 jest.mock('../services/user.services');
 

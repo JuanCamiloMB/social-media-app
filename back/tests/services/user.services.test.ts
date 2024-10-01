@@ -1,6 +1,6 @@
-import { SALT } from "../config";
-import { DB_URL, DB_ANON } from "../config";
-import { registerUser } from './user.services';
+import { SALT } from "../../src/config";
+import { DB_URL, DB_ANON } from "../../src/config";
+import { registerUser } from '../../src/services/user.services';
 import bcrypt from 'bcrypt';
 import { createClient } from '@supabase/supabase-js';
 
