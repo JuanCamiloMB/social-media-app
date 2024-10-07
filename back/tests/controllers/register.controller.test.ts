@@ -1,7 +1,7 @@
 import { handleRegisterRoute } from '../../src/controller/register.controller';
 import { registerUser } from '../../src/services/user.services';
 
-jest.mock('../services/user.services');
+jest.mock('../../src/services/user.services');
 
 const mockedRegisterUser = registerUser as jest.MockedFunction<typeof registerUser>;
 
