@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login.component';
@@ -22,6 +22,7 @@ describe('LoginComponent', () => {
         { provide: Router, useValue: { navigate: jasmine.createSpy('navigate') } },
         { provide: ToastrService, useValue: { error: jasmine.createSpy('error'), success: jasmine.createSpy('success') } },
         { provide: UserService, useValue: { user: null, isAuth: false } },
+        { provide: ActivatedRoute, useValue: {} } // Proveer un mock de ActivatedRoute
       ]
     }).compileComponents();
   
@@ -31,6 +32,7 @@ describe('LoginComponent', () => {
     toastService = TestBed.inject(ToastrService);
     userService = TestBed.inject(UserService);
   });
+  
   
 
   it('debería ser inválido si los campos están vacíos', () => {
