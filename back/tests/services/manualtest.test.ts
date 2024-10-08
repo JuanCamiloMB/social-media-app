@@ -10,7 +10,7 @@ async function testGetUser() {
     console.error("Test case 1 failed. Result:", result1);
   }
 
-  // Test case 2: User not found (Assume id 9999 does not exist)
+  // Test case 2: User not found (Assume id does not exist)
   console.log("\nRunning Test Case 2: Fetching a non-existent user.");
   const result2 = await getUser(100);
   if (result2 === null) {
