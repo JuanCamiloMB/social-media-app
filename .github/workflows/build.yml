@@ -11,9 +11,37 @@ jobs:
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Ajusta esto a la versión de Node.js que uses
+
+      - name: Install dependencies
+        run: |
+          cd front && npm i
+          cd ../back && npm i
+
+      - name: Run tests and coverage for Angular (front)
+        continue-on-error: true
+        run: |
+          cd front
+          ng test --browsers=ChromeHeadless --no-progress --code-coverage
+
+      - name: Run tests and coverage for Express (back)
+        continue-on-error: true
+        run: |
+          cd back
+          npx jest --collectCoverage
+
+      - name: Merge coverage reports
+        run: |
+          mkdir coverage
+          npx lcov-result-merger '*/coverage/lcov.info' coverage/lcov.info
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
